@@ -1,0 +1,22 @@
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+def groovyVersion = '2.4'
+def spockVersion = '1.2'
+def fakerVersion = '0.16'
+def lombokVersion = '1.18.+'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}.+"
+    testCompile "org.spockframework:spock-core:${spockVersion}-groovy-${groovyVersion}"
+    testCompile "com.github.javafaker:javafaker:${fakerVersion}"
+}
